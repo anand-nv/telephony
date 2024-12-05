@@ -1,7 +1,6 @@
 
 import pjsua2 as pj
 import time
-# Subclass to extend the Account and get notifications etc.
 
 ep=None
 # Call class
@@ -59,6 +58,9 @@ class Call(pj.Call):
 
 
 class Account(pj.Account):
+    """
+    Subclass to extend the Account and get notifications etc.
+    """
     def onRegState(self, prm):
         print ("***OnRegState: " + prm.reason)
     def onIncomingCall(self, prm):

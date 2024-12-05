@@ -5,20 +5,13 @@ import logging
 
 # Subclass to extend the Account and get notifications etc.
 class Account(pj.Account):
+    """
+    Subclass to extend the Account.
+    """
     def onRegState(self, prm):
         print("***OnRegState: " + prm.reason)
 
-    def onIncomingCall(self, prm):
-        self.call_id == prm.callId
-        self.acceptCall = True
 
-        self.c = Call(self, call_id=prm.callId)
-
-        ci = self.c.getInfo()
-        msg = "Incoming call  from  '%s'" % (ci.remoteUri)
-        print(msg)
-
-        self.inCall = True
 
 
 class Call(pj.Call):
