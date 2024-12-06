@@ -85,6 +85,7 @@ def receive_call_and_play():
     ep = pj.Endpoint()
     ep.libCreate()
     ep.libInit(ep_cfg)
+    ep.audDevManager().setNullDev()
 
     # Create SIP transport. Error handling sample is shown
     sipTpConfig = pj.TransportConfig()
